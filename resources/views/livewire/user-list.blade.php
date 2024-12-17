@@ -66,7 +66,8 @@
                             {{ $data->address }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            <a href="/user/{{ $data->id }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            {{-- {{ $data->id }} --}}
+                            <x-button type="button" wire:click="toggleFormEdit('{{ $data->id }}')">Edit</x-button>
                         </td>
                     </tr>
                 @endforeach
@@ -102,7 +103,7 @@
                                 <div class="mt-2">
                                     <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
                                     <div class="flex">
-                                        <input type="{{ $typePassword }}" wire:model.live="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        <input type="{{ $typePassword }}" wire:model.live="password" placeholder="{{ $id == null ? '' : 'Isi jika ingin password baru' }}" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     <label class="swap ms-2">
                                         <input type="checkbox" wire:click="togglePasswordVisibility" class="hidden" />
                                         <div class="swap-on">

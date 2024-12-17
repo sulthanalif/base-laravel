@@ -43,10 +43,10 @@ class User extends Authenticatable
      *
      * @return string
      */
-    public function getAuthIdentifierName()
-    {
-        return 'id';
-    }
+    // public function getAuthIdentifierName()
+    // {
+    //     return 'id';
+    // }
 
     /**
      * The attributes that should be hidden for serialization.
